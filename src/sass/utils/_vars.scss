@@ -1,0 +1,31 @@
+:root {
+	--main-color: #202025;
+	--main-white-color: #FCFCFC;
+
+	--accent-text-color: #FD5103;
+	--alternative-text-color: #5F6775;
+
+	--accent-button-color: #FE7031;
+
+	// fonts
+	--poppins-family: "Poppins", sans-serif;
+	--poppins-font-weight-400: 400;
+	--poppins-font-weight-500: 500;
+	--poppins-font-weight-600: 600;
+	--poppins-font-weight-700: 700;
+
+	--roboto-alternate-family: "Roboto", sans-serif;
+	--roboto-alternate-font-weight-400: 400;
+	--roboto-alternate-font-weight-700: 700;
+	--roboto-alternate-font-weight-900: 900;
+
+	// effect
+	--general-transition-effect: .4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+$pre-mobile: 479.98px;
+$mobile: 480px;
+$pre-tablet: 767.98px;
+$tablet: 768px;
+$pre-desctop: 1279.98px;
+$desctop: 1280px;

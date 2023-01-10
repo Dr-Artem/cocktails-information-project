@@ -1,0 +1,111 @@
+.header {
+	padding: 20px 16px 0 16px;
+	margin-bottom: 90px;
+
+	&__wrapper {
+		// display: flex;
+		align-items: center;
+		// justify-content: space-between;
+	}
+	&__wrapper-navigation {
+		display: flex;
+		justify-content: space-between;
+	}
+	&__navbar {
+		display: flex;
+		// align-items: center;
+		gap: 60px;
+	}
+	&__navbar-logo {
+		font-family: "Poppins";
+		font-style: normal;
+		font-weight: 400;
+		font-size: 28px;
+		line-height: 24px;
+		letter-spacing: 0.02em;
+		color: #fd5103;
+	}
+	&__navbar-link {
+		font-family: "Poppins";
+		font-style: normal;
+		font-weight: 400;
+		font-size: 18px;
+		line-height: 24px;
+		letter-spacing: 0.02em;
+		color: #202025;
+	}
+	&__search-form {
+		display: flex;
+		border: 2px solid orange;
+		border-radius: 4px;
+	}
+	&__search-form-button {
+		border-radius: 4px;
+		background-color: white;
+		border: none;
+	}
+	&__search-form-input {
+		border: none;
+	}
+}
+
+.header__switch {
+	display: flex;
+	align-items: center;
+	gap: 12px;
+	margin-left: 170px;
+}
+.header__switch-wrapper {
+	display: flex;
+	align-items: center;
+}
+.header__switch-input {
+	opacity: 0;
+	width: 0;
+	height: 0;
+}
+.header__switch-label {
+	position: relative;
+	display: flex;
+	align-items: center;
+	cursor: pointer;
+}
+
+.header__switch-input + .header__switch-label::before {
+	content: "";
+	width: 40px;
+	height: 20px;
+	background-color: white;
+	border-radius: 10px;
+	outline: 2px solid #fd5103;
+	transition: var(--general-transition-effect);
+}
+
+.header__switch-input:checked + .header__switch-label::before {
+	background-color: #fd5103;
+	outline: 2px solid white;
+}
+
+.header__switch-input + .header__switch-label::after {
+	position: absolute;
+	left: 2px;
+	content: "";
+	width: 16px;
+	height: 16px;
+	background-color: #fd5103;
+	border-radius: 8px;
+	transition: var(--general-transition-effect);
+}
+
+.header__switch-input:checked + .header__switch-label::after {
+	left: 21px;
+	background-color: white;
+}
+
+.header__switch-input:checked + .header__switch-label {
+	color: red;
+}
+
+.header__test {
+	display: flex;
+}

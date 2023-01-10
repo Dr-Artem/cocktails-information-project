@@ -1,0 +1,389 @@
+@import '~node_modules/modern-normalize/modern-normalize.css';
+:root {
+  --main-color: #202025;
+  --main-white-color: #FCFCFC;
+  --accent-text-color: #FD5103;
+  --alternative-text-color: #5F6775;
+  --accent-button-color: #FE7031;
+  --poppins-family: "Poppins", sans-serif;
+  --poppins-font-weight-400: 400;
+  --poppins-font-weight-500: 500;
+  --poppins-font-weight-600: 600;
+  --poppins-font-weight-700: 700;
+  --roboto-alternate-family: "Roboto", sans-serif;
+  --roboto-alternate-font-weight-400: 400;
+  --roboto-alternate-font-weight-700: 700;
+  --roboto-alternate-font-weight-900: 900;
+  --general-transition-effect: .4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--poppins-family);
+  color: var(--main-color);
+  margin: 0;
+}
+
+ul,
+ol,
+li {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+h1, h2, h3, h4, h5, h6, p {
+  margin: 0;
+  padding: 0;
+}
+
+button {
+  color: inherit;
+  margin: 0;
+  padding: 0;
+  outline: none;
+}
+
+img {
+  display: block;
+  height: auto;
+  max-width: 100%;
+}
+
+a {
+  outline: none;
+  text-decoration: none;
+}
+
+input {
+  outline: none;
+}
+
+.container {
+  max-width: 480px;
+  margin: 0 auto;
+}
+@media screen and (min-width: 768px) {
+  .container {
+    max-width: 768px;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .container {
+    max-width: 1280px;
+  }
+}
+
+.flex-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.hidden {
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  border: 0;
+  padding: 0;
+  clip: rect(0 0 0 0);
+  -webkit-clip-path: inset(50%);
+          clip-path: inset(50%);
+  margin: -1px;
+}
+
+.header {
+  padding: 20px 16px 0 16px;
+  margin-bottom: 90px;
+}
+.header__wrapper {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.header__wrapper-navigation {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+.header__navbar {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 60px;
+}
+.header__navbar-logo {
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 28px;
+  line-height: 24px;
+  letter-spacing: 0.02em;
+  color: #fd5103;
+}
+.header__navbar-link {
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 24px;
+  letter-spacing: 0.02em;
+  color: #202025;
+}
+.header__search-form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  border: 2px solid orange;
+  border-radius: 4px;
+}
+.header__search-form-button {
+  border-radius: 4px;
+  background-color: white;
+  border: none;
+}
+.header__search-form-input {
+  border: none;
+}
+
+.header__switch {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 12px;
+  margin-left: 170px;
+}
+
+.header__switch-wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.header__switch-input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.header__switch-label {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  cursor: pointer;
+}
+
+.header__switch-input + .header__switch-label::before {
+  content: "";
+  width: 40px;
+  height: 20px;
+  background-color: white;
+  border-radius: 10px;
+  outline: 2px solid #fd5103;
+  -webkit-transition: var(--general-transition-effect);
+  -o-transition: var(--general-transition-effect);
+  transition: var(--general-transition-effect);
+}
+
+.header__switch-input:checked + .header__switch-label::before {
+  background-color: #fd5103;
+  outline: 2px solid white;
+}
+
+.header__switch-input + .header__switch-label::after {
+  position: absolute;
+  left: 2px;
+  content: "";
+  width: 16px;
+  height: 16px;
+  background-color: #fd5103;
+  border-radius: 8px;
+  -webkit-transition: var(--general-transition-effect);
+  -o-transition: var(--general-transition-effect);
+  transition: var(--general-transition-effect);
+}
+
+.header__switch-input:checked + .header__switch-label::after {
+  left: 21px;
+  background-color: white;
+}
+
+.header__switch-input:checked + .header__switch-label {
+  color: red;
+}
+
+.header__test {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.hero {
+  margin-bottom: 60px;
+}
+.hero__wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 60px;
+}
+.hero__title {
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 52px;
+  line-height: 80px;
+  color: #fd5103;
+  margin-bottom: 40px;
+  max-width: 690px;
+}
+.hero__subtitle {
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 28px;
+  letter-spacing: 0.02em;
+  color: #202025;
+  opacity: 0.8;
+  margin-bottom: 40px;
+}
+
+.alphabet-list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  max-width: 520px;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.letter {
+  width: 40px;
+  height: 40px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  cursor: pointer;
+}
+
+.letter-button {
+  background-color: transparent;
+  border: none;
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 36px;
+  color: #5f6775;
+}
+
+.letter:hover .letter-button,
+.letter:focus .letter-button {
+  outline: none;
+  color: #fd5103;
+  -webkit-text-stroke: 1.5px #5f6775;
+}
+
+/* The Modal (background) */
+.modal-cocktail {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0, 0, 0); /* Fallback color */
+  background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+}
+
+/* Modal Content/Box */
+.modal-cocktail__info {
+  background-color: #fefefe;
+  margin: 15% auto; /* 15% from the top and centered */
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%; /* Could be more or less, depending on screen size */
+}
+
+/* The Close Button */
+.modal-cocktail__close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.modal-cocktail__close:hover,
+.modal-cocktail__close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* The Modal (background) */
+.modal-ingredient {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0, 0, 0); /* Fallback color */
+  background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+}
+
+/* Modal Content/Box */
+.modal-ingredient__info {
+  background-color: #fefefe;
+  margin: 15% auto; /* 15% from the top and centered */
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%; /* Could be more or less, depending on screen size */
+}
+
+/* The Close Button */
+.modal-ingredient__close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.modal-ingredient__close:hover,
+.modal-ingredient__close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}/*# sourceMappingURL=index.css.map */

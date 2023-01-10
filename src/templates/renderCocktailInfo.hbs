@@ -1,0 +1,14 @@
+{{#with this}}
+    <span class='modal-cocktail__close'>&times;</span>
+    <img class="modal-cocktail__image" src='{{image}}' alt='' />
+    <h3 class="modal-cocktail__name">{{name}}</h3>
+    <ul class="modal-cocktail__ingredients-list">
+        {{#each ingredients}}
+            <li class="modal-cocktail__ingredient">{{this}} <a class='ingredient-link' id='{{@key}}'>{{@key}}</a></li>
+        {{/each}}
+    </ul>
+    <div class='modal-ingredient'>
+        <div class='modal-ingredient__info'></div>
+    </div>
+
+{{/with}}
