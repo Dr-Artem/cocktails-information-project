@@ -1,0 +1,79 @@
+.cards__title {
+	font-family: "Poppins";
+	font-style: normal;
+	font-weight: 700;
+	font-size: 48px;
+	line-height: 72px;
+	text-align: center;
+	color: #202025;
+	text-align: center;
+	margin-bottom: 60px;
+}
+
+.menu-list {
+	display: flex;
+	justify-content: center;
+	flex-wrap: wrap;
+	gap: 32px;
+}
+.menu-list__item {
+	flex-basis: calc((100% - (32px * 2)) / 3);
+	border: 1px solid #fd5103;
+	border-radius: 4px;
+}
+.menu-list__image-wrapper {
+	margin-bottom: 20px;
+}
+.menu-list__image {
+	border-top-left-radius: 4px;
+	border-top-right-radius: 4px;
+}
+.menu-list-content-wrapper {
+	padding: 0 28px 28px;
+	flex: 1 0 auto;
+}
+.menu-list__name {
+	font-family: "Roboto";
+	font-style: normal;
+	font-weight: 900;
+	font-size: 32px;
+	line-height: 38px;
+	text-align: center;
+	color: #202025;
+	margin-bottom: 27px;
+}
+.menu-list__buttons-wrapper {
+	display: flex;
+	justify-content: space-between;
+}
+.menu-list__lookup {
+	background-color: #fe7031;
+	border-radius: 4px;
+	border: none;
+	padding: 12px 38px;
+	outline: 1px solid #fe7031;
+	cursor: pointer;
+
+	font-family: "Roboto";
+	font-style: normal;
+	font-weight: 400;
+	font-size: 20px;
+	line-height: 24px;
+	letter-spacing: 0.02em;
+	color: #ffffff;
+}
+.menu-list__add {
+	background-color: transparent;
+	border-radius: 4px;
+	border: none;
+	outline: 1px solid #fe7031;
+	padding: 12px 22px;
+	display: flex;
+	align-items: center;
+	cursor: pointer;
+}
+.menu-list__add-svg {
+	width: 21px;
+	height: 19px;
+	margin-left: 5px;
+}
