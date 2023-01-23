@@ -1,7 +1,8 @@
 .hero {
-	margin-bottom: 60px;
+	padding: 80px 0 60px 0;
 	&__wrapper {
 		display: flex;
+		justify-content: space-between;
 		gap: 60px;
 	}
 	&__title {
@@ -21,7 +22,7 @@
 		font-size: 18px;
 		line-height: 28px;
 		letter-spacing: 0.02em;
-		color: #202025;
+		color: inherit;
 		opacity: 0.8;
 		margin-bottom: 40px;
 	}
@@ -40,6 +41,8 @@
 	justify-content: center;
 	align-items: center;
 	cursor: pointer;
+	background-color: transparent;
+	border: none;
 	// font-family: "Poppins";
 	// font-style: normal;
 	// font-weight: 700;
@@ -61,12 +64,16 @@
 	line-height: 36px;
 
 	color: #5f6775;
+
+	transition: color var(--general-transition-effect), outline var(--general-transition-effect),
+		text-shadow var(--general-transition-effect);
 }
 
 .letter:hover .letter-button,
 .letter:focus .letter-button {
 	outline: none;
 	color: #fd5103;
-	-webkit-text-stroke: 1.5px #5f6775;
+	-webkit-text-stroke: 1px #5f6775;
 	// text-shadow: -1px 0px 0px #5f6775, 1px 0px 0px #5f6775, 0px -1px 0px #5f6775, 0px 1px 0px #5f6775;
+	text-shadow: 0px 4px 4px rgba(95, 103, 117, 0.25);
 }

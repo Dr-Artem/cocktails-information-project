@@ -1,12 +1,18 @@
 html {
 	scroll-behavior: smooth;
+	height: 100%;
 }
 body {
 	font-family: var(--poppins-family);
 	color: var(--main-color);
+	fill: var(--main-color);
 	margin: 0;
+	height: 100%;
 }
-
+body.dark {
+	background-color: var(--main-color);
+	color: var(--main-white-color);
+}
 
 ul,
 ol,
@@ -16,7 +22,13 @@ li {
 	margin: 0;
 }
 
-h1, h2, h3, h4, h5, h6, p {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
 	margin: 0;
 	padding: 0;
 }
@@ -66,4 +78,18 @@ input {
 	clip: rect(0 0 0 0);
 	clip-path: inset(50%);
 	margin: -1px;
+}
+
+::-webkit-scrollbar {
+	width: 8px;
+}
+::-webkit-scrollbar-track {
+	background-color: transparent;
+}
+::-webkit-scrollbar-thumb {
+	background: #fd510366;
+	border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+	background: #fd5103cc;
 }

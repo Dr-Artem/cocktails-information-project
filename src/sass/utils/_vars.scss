@@ -1,11 +1,11 @@
 :root {
 	--main-color: #202025;
-	--main-white-color: #FCFCFC;
+	--main-white-color: #fcfcfc;
 
-	--accent-text-color: #FD5103;
-	--alternative-text-color: #5F6775;
+	--accent-text-color: #fd5103;
+	--alternative-text-color: #5f6775;
 
-	--accent-button-color: #FE7031;
+	--accent-button-color: #fe7031;
 
 	// fonts
 	--poppins-family: "Poppins", sans-serif;
@@ -20,7 +20,7 @@
 	--roboto-alternate-font-weight-900: 900;
 
 	// effect
-	--general-transition-effect: .4s cubic-bezier(0.4, 0, 0.2, 1);
+	--general-transition-effect: 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 $pre-mobile: 479.98px;

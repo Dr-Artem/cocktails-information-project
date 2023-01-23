@@ -1,29 +1,22 @@
 {{#each this}}
-    <li class='menu-list__item'>
-		<div class="menu-list__image-wrapper">
-			<img class='menu-list__image' src='{{this.strDrinkThumb}}' />
-		</div>
-        
-		<div class="menu-list-content-wrapper">
-			<h3 class='menu-list__name'>{{this.strDrink}}</h3>
-			<div class="menu-list__buttons-wrapper">
-				<button class='menu-list__lookup' id='{{this.idDrink}}'>Learn More</button>
-				<button class="menu-list__add">Add To
-				<svg class="menu-list__add-svg" viewBox='0 0 36 32'>
-					<path
-						fill='#fd5103'
-						style='fill: var(--color1, #fd5103)'
-						d='M17.882 32l-2.593-2.302c-9.209-8.144-15.289-13.515-15.289-20.107 0-5.371 4.328-9.591 9.835-9.591 3.112 0 6.098 1.413 8.047 3.645 1.949-2.232 4.936-3.645 8.047-3.645 5.508 0 9.835 4.22 9.835 9.591 0 6.592-6.080 11.963-15.289 20.124l-2.593 2.284z'
-					></path>
-					<path
-						fill='#fcfcfc'
-						style='fill: var(--color2, #fcfcfc)'
-						d='M17.882 28.631l-2.099-1.817c-7.455-6.429-12.377-10.67-12.377-15.874 0-4.24 3.503-7.572 7.962-7.572 2.519 0 4.936 1.115 6.514 2.877 1.578-1.762 3.995-2.877 6.514-2.877 4.459 0 7.962 3.332 7.962 7.572 0 5.204-4.922 9.444-12.377 15.888l-2.099 1.803z'
-					></path>
+    <li class='menu-list__item' id='strDrink{{this.idDrink}}'>
+        <div class='menu-list__image-wrapper'>
+            <img class='menu-list__image' loading='lazy' src='{{this.strDrinkThumb}}' />
+        </div>
 
-				</svg>
-				</button>
-			</div>
-		</div>
+        <div class='menu-list-content-wrapper'>
+            <h3 class='menu-list__name'>{{this.strDrink}}</h3>
+            <div class='menu-list__buttons-wrapper'>
+                <button class='menu-list__lookup' id='{{this.idDrink}}'>Learn More</button>
+                <button class='menu-list__add' id='strDrink{{this.idDrink}}'>Add To
+                    <svg class='menu-list__add-icon' viewBox='0 0 36 32'><path
+                            fill='#fd5103'
+                            style='fill: var(--color1, #fd5103)'
+                            d='M26.674 2.56c0.92-0.001 1.83 0.184 2.678 0.545s1.616 0.889 2.261 1.554c1.327 1.365 2.071 3.204 2.071 5.12s-0.744 3.755-2.071 5.12l-13.086 13.427-13.086-13.427c-1.327-1.365-2.071-3.204-2.071-5.12s0.744-3.755 2.071-5.12c0.644-0.665 1.413-1.193 2.261-1.554s1.758-0.546 2.678-0.546c0.92 0 1.83 0.186 2.678 0.546s1.617 0.889 2.261 1.554l3.208 3.328 3.196-3.302c0.642-0.673 1.411-1.208 2.262-1.574s1.766-0.553 2.69-0.551zM26.674 0c-1.256-0.001-2.5 0.252-3.658 0.744s-2.208 1.214-3.087 2.123l-1.402 1.434-1.402-1.434c-0.881-0.907-1.93-1.628-3.088-2.119s-2.401-0.745-3.657-0.745c-1.256 0-2.499 0.253-3.657 0.745s-2.208 1.212-3.088 2.119c-1.791 1.848-2.795 4.335-2.795 6.925s1.004 5.077 2.795 6.925l14.893 15.283 14.893-15.283c1.791-1.848 2.795-4.335 2.795-6.925s-1.004-5.077-2.795-6.925c-0.88-0.908-1.93-1.629-3.088-2.121s-2.401-0.746-3.657-0.746z'
+                        ></path>
+                    </svg>
+                </button>
+            </div>
+        </div>
     </li>
 {{/each}}

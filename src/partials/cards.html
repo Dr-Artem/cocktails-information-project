@@ -1,8 +1,11 @@
 <section class="cards container">
-	<h2 class="cards__title">Cocktails</h2>
+    <h2 class="cards__title">Cocktails</h2>
+    <h2 class="cards__title title-error hidden">Sorry, we didn't find any cocktail for you</h2>
+    <picture class="error-wrapper">
+        <source srcset="./images/main/error-photo-480.webp 1x, ./images/main/error-photo-480@2x.webp 2x" type="image/webp" media="(max-width: 767px)" />
+        <source srcset="./images/main/error-photo-1280.webp 1x, ./images/main/error-photo-1280@2x.webp 2x" type="image/webp" media="(min-width: 1200px)" />
+        <source srcset="./images/main/error-photo-768.webp 1x, ./images/main/error-photo-768@2x.webp 2x" type="image/webp" media="(min-width: 768px)" />
+        <img class="error-wrapper__img hidden" src="./images/main/error-photo-1280.png" alt="two people at the table, smiling and waiting for their order, which the waiter brought" />
+    </picture>
     <ul class="menu-list"></ul>
-
-    <div class="modal-cocktail">
-        <div class="modal-cocktail__info"></div>
-    </div>
 </section>

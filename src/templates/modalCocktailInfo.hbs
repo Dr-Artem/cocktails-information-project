@@ -1,0 +1,26 @@
+{{#with this}}
+    <span class='modal-cocktail__close'>&times;</span>
+    <div class='modal-cocktail__content-wrapper'>
+        <div class='modal-cocktail__image-wrapper'>
+            <img class='modal-cocktail__image' src='{{image}}' alt='' />
+        </div>
+        <div class='modal-cocktail__cocktail-info'>
+            <h3 class='modal-cocktail__name'>{{name}}</h3>
+            <p class='modal-cocktail__ingredients'>ingredients</p>
+            <p class='modal-cocktail__measure'>Per cocktail</p>
+            <ul class='modal-cocktail__ingredients-list'>
+                {{#each ingredients}}
+                    <li class='modal-cocktail__ingredient'>&sext;<a class='ingredient-link' id='{{@key}}'> {{this}} {{@key}}</a></li>
+                {{/each}}
+            </ul>
+        </div>
+    </div>
+    <div class='modal-cocktail__description-wrapper'>
+        <p class='modal-cocktail__description-subtitle'>instractions:</p>
+        <p class='modal-cocktail__description-text'>{{insrtuction}}</p>
+    </div>
+    <div class='modal-cocktail__button-wrapper'>
+        <button class='modal-cocktail__add-favourite' id='strDrink{{id}}'>Add to favourite</button>
+    </div>
+
+{{/with}}

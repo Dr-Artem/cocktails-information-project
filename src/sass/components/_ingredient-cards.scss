@@ -1,59 +1,35 @@
-.cards {
-	padding: 60px 0 60px 0;
-}
-.cards__title {
-	font-family: "Poppins";
-	font-style: normal;
-	font-weight: 700;
-	font-size: 48px;
-	line-height: 72px;
-	text-align: center;
-	color: inherit;
-	text-align: center;
-	margin-bottom: 60px;
-}
-
-.menu-list {
-	display: flex;
-	flex-wrap: wrap;
-	gap: 32px;
-}
-.menu-list__item {
+.fav-ingredient__item {
 	flex-basis: calc((100% - (32px * 2)) / 3);
 	border: 1px solid #fd5103;
-	border-radius: 4px;
+}
+.fav-ingredient__content-wrapper {
+	padding: 30px 28px 26px;
 	display: flex;
 	flex-direction: column;
+	gap: 28px;
 }
-.menu-list__image-wrapper {
-	margin-bottom: 20px;
-}
-.menu-list__image {
-	border-top-left-radius: 4px;
-	border-top-right-radius: 4px;
-}
-.menu-list-content-wrapper {
-	padding: 0 28px 28px;
-	display: flex;
-	flex-direction: column;
-	justify-content: space-between;
-	flex: 1 0 auto;
-}
-.menu-list__name {
+.fav-ingredient__name {
 	font-family: "Roboto";
 	font-style: normal;
 	font-weight: 900;
 	font-size: 32px;
 	line-height: 38px;
-	text-align: center;
 	color: inherit;
-	margin-bottom: 27px;
 }
-.menu-list__buttons-wrapper {
+.fav-ingredient__type {
+	font-family: "Poppins";
+	font-style: normal;
+	font-weight: 600;
+	font-size: 16px;
+	line-height: 24px;
+	text-transform: uppercase;
+	color: #5f6775;
+}
+.fav-ingredient__button-wrapper {
 	display: flex;
 	justify-content: space-between;
 }
-.menu-list__lookup {
+.fav-ingredient__learn {
 	background-color: #fe7031;
 	border-radius: 4px;
 	border: none;
@@ -70,21 +46,22 @@
 	letter-spacing: 0.02em;
 	color: #ffffff;
 
-	transition: color var(--general-transition-effect), background-color var(--general-transition-effect),
+	transition: background-color var(--general-transition-effect), color var(--general-transition-effect),
 		outline var(--general-transition-effect), filter var(--general-transition-effect);
 }
-.menu-list__lookup:hover,
-.menu-list__lookup:focus {
+.fav-ingredient__learn:hover,
+.fav-ingredient__learn:focus {
 	background-color: #f5f5f5;
 	color: #fd5103;
 	outline: none;
 	filter: none;
 }
-.menu-list__lookup:active {
+.fav-ingredient__learn:active {
 	background-color: #fd5103;
 	color: #ffffff;
 }
-.menu-list__add {
+
+.fav-ingredient__remove {
 	background-color: transparent;
 	border-radius: 4px;
 	border: none;
@@ -104,21 +81,12 @@
 
 	transition: background-color var(--general-transition-effect);
 }
-.menu-list__add:hover,
-.menu-list__add:focus {
+.fav-ingredient__remove:hover,
+.fav-ingredient__remove:focus {
 	background-color: #f5f5f5;
 }
-.menu-list__add-icon {
+.fav-ingredient__remove-icon {
 	width: 21px;
 	height: 19px;
 	margin-left: 5px;
-}
-
-.error-wrapper {
-	display: flex;
-	justify-content: center;
-}
-.title-error {
-	max-width: 600px;
-	margin: 0 auto 60px;
 }

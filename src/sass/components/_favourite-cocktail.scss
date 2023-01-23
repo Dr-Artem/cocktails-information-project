@@ -1,0 +1,19 @@
+.fav-cocktail {
+	padding: 40px 0 60px 0;
+	height: 100%;
+}
+.fav-cocktail__title {
+	font-family: "Poppins";
+	font-weight: 700;
+	font-size: 48px;
+	line-height: 72px;
+	text-align: center;
+	color: inherit;
+
+	margin-bottom: 60px;
+}
+.fav-cocktail__list {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 32px;
+}

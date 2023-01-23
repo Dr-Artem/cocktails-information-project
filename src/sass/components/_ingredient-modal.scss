@@ -7,24 +7,34 @@
 	top: 0;
 	width: 100%; /* Full width */
 	height: 100%; /* Full height */
-	overflow: auto; /* Enable scroll if needed */
-	background-color: rgb(0, 0, 0); /* Fallback color */
 	background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
 }
 
 /* Modal Content/Box */
 .modal-ingredient__info {
-	background-color: #fefefe;
-	margin: 15% auto; /* 15% from the top and centered */
-	padding: 20px;
-	border: 1px solid #888;
-	width: 80%; /* Could be more or less, depending on screen size */
+	position: absolute;
+	content: "";
+	top: 50%;
+	left: 50%;
+	max-width: 715px;
+	width: 100%;
+	transform: translate(-50%, -50%);
+	background-color: var(--main-white-color);
+	display: flex;
+	flex-direction: column;
+	padding: 0 28px 28px 28px;
+}
+.modal-ingredient__info.dark {
+	background-color: var(--main-color);
 }
 
 /* The Close Button */
 .modal-ingredient__close {
-	color: #aaa;
-	float: right;
+	color: inherit;
+	position: absolute;
+	content: "";
+	top: 0;
+	right: 0;
 	font-size: 28px;
 	font-weight: bold;
 }
@@ -33,5 +43,74 @@
 .modal-ingredient__close:focus {
 	color: black;
 	text-decoration: none;
+	cursor: pointer;
+}
+
+.modal-ingredient__name {
+	font-family: "Roboto";
+	font-weight: 900;
+	font-size: 32px;
+	line-height: 38px;
+	color: inherit;
+	margin-bottom: 28px;
+}
+
+.modal-ingredient__type {
+	font-family: "Poppins";
+	font-weight: 600;
+	font-size: 16px;
+	line-height: 24px;
+	text-transform: uppercase;
+	color: inherit;
+}
+
+.modal-ingredient__title-wrapper {
+	// margin-bottom: 68px;
+	padding: 40px 0;
+	margin-bottom: 28px;
+	border-bottom: 1px solid #fd5103;
+}
+
+.modal-ingredient__info-wrapper {
+	margin-bottom: 28px;
+}
+
+.modal-ingredient__description {
+	font-family: "Poppins";
+	font-weight: 400;
+	font-size: 16px;
+	line-height: 28px;
+	color: #5f6775;
+
+	max-height: 110px;
+	overflow: auto;
+	margin-bottom: 28px;
+}
+
+.modal-ingredient__list {
+	font-family: "Poppins";
+	font-weight: 600;
+	font-size: 16px;
+	line-height: 24px;
+	color: #202025;
+}
+
+.modal-ingredient__button-wrapper {
+	display: flex;
+	justify-content: flex-end;
+	padding: 0 28px;
+}
+
+.modal-ingredient__add-favourite {
+	background-color: #fd5103;
+	border-radius: 4px;
+	padding: 12px 24px;
+	border: none;
+
+	font-family: "Roboto";
+	font-weight: 400;
+	font-size: 20px;
+	line-height: 24px;
+	color: #ffffff;
 	cursor: pointer;
 }
