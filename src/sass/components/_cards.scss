@@ -20,7 +20,7 @@
 }
 .menu-list__item {
 	flex-basis: calc((100% - (32px * 2)) / 3);
-	border: 1px solid #fd5103;
+	border: 1px solid var(--accent-text-color);
 	border-radius: 4px;
 	display: flex;
 	flex-direction: column;
@@ -54,11 +54,11 @@
 	justify-content: space-between;
 }
 .menu-list__lookup {
-	background-color: #fe7031;
+	background-color: var(--accent-button-color);
 	border-radius: 4px;
 	border: none;
 	padding: 12px 38px;
-	outline: 1px solid #fe7031;
+	outline: 1px solid var(--accent-button-color);
 	cursor: pointer;
 	filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
 
@@ -68,27 +68,27 @@
 	font-size: 20px;
 	line-height: 24px;
 	letter-spacing: 0.02em;
-	color: #ffffff;
+	color: var(--main-white-color);
 
 	transition: color var(--general-transition-effect), background-color var(--general-transition-effect),
 		outline var(--general-transition-effect), filter var(--general-transition-effect);
 }
 .menu-list__lookup:hover,
 .menu-list__lookup:focus {
-	background-color: #f5f5f5;
-	color: #fd5103;
+	background-color: var(--main-white-color);
+	color: var(--accent-text-color);
 	outline: none;
 	filter: none;
 }
 .menu-list__lookup:active {
-	background-color: #fd5103;
-	color: #ffffff;
+	background-color: var(--accent-text-color);
+	color: var(--main-white-color);
 }
 .menu-list__add {
 	background-color: transparent;
 	border-radius: 4px;
 	border: none;
-	outline: 2px solid #fd5103;
+	outline: 2px solid var(--accent-text-color);
 	padding: 12px 22px;
 	display: flex;
 	align-items: center;
@@ -100,13 +100,13 @@
 	font-size: 20px;
 	line-height: 24px;
 	letter-spacing: 0.02em;
-	color: #fd5103;
+	color: var(--accent-text-color);
 
 	transition: background-color var(--general-transition-effect);
 }
 .menu-list__add:hover,
 .menu-list__add:focus {
-	background-color: #f5f5f5;
+	background-color: var(--main-white-color);
 }
 .menu-list__add-icon {
 	width: 21px;

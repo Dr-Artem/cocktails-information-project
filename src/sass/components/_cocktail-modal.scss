@@ -1,6 +1,8 @@
 /* The Modal (background) */
 .modal-cocktail {
-	display: none; /* Hidden by default */
+	display: block; /* Hidden by default */
+	opacity: 0;
+	visibility: hidden;
 	position: fixed; /* Stay in place */
 	z-index: 1; /* Sit on top */
 	left: 0;
@@ -9,7 +11,7 @@
 	height: 100%; /* Full height */
 	background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
 
-	transition: opacity var(--general-transition-effect);
+	transition: all var(--general-transition-effect);
 }
 body._lock {
 	overflow: hidden;
@@ -35,20 +37,18 @@ body._lock {
 
 /* The Close Button */
 .modal-cocktail__close {
-	color: #aaa;
 	position: absolute;
 	content: "";
-	top: 0;
-	right: 0;
-	font-size: 28px;
-	font-weight: bold;
+	top: 12px;
+	right: 12px;
+	fill: inherit;
+	transition: fill var(--general-transition-effect);
 }
 
 .modal-cocktail__close:hover,
 .modal-cocktail__close:focus {
-	color: inherit;
-	text-decoration: none;
 	cursor: pointer;
+	fill: var(--accent-text-color);
 }
 
 .modal-cocktail__content-wrapper {
@@ -57,9 +57,6 @@ body._lock {
 	gap: 32px;
 }
 
-// .modal-cocktail__image-wrapper {
-// 	margin-right: 32px;
-// }
 .modal-cocktail__image {
 	max-width: 290px;
 	width: 100%;
@@ -103,14 +100,14 @@ body._lock {
 	font-weight: 400;
 	font-size: 16px;
 	line-height: 26px;
-	color: #5f6775;
+	color: var(--alternative-text-color);
 	cursor: pointer;
 
 	transition: color var(--general-transition-effect);
 }
 .ingredient-link:hover,
 .ingredient-link:focus {
-	color: #fd5103 !important;
+	color: var(--accent-text-color) !important;
 }
 
 .modal-cocktail__description-wrapper {
@@ -133,7 +130,7 @@ body._lock {
 	font-weight: 400;
 	font-size: 16px;
 	line-height: 28px;
-	color: #5f6775;
+	color: var(--alternative-text-color);
 	max-width: 615px;
 }
 
@@ -144,7 +141,7 @@ body._lock {
 }
 
 .modal-cocktail__add-favourite {
-	background-color: #fd5103;
+	background-color: var(--accent-text-color);
 	border-radius: 4px;
 	padding: 12px 24px;
 	border: none;
@@ -153,6 +150,6 @@ body._lock {
 	font-weight: 400;
 	font-size: 20px;
 	line-height: 24px;
-	color: #ffffff;
+	color: var(--main-white-color);
 	cursor: pointer;
 }

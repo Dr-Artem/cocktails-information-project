@@ -1,17 +1,18 @@
 html {
 	scroll-behavior: smooth;
-	height: 100%;
 }
 body {
 	font-family: var(--poppins-family);
 	color: var(--main-color);
+	background-color: var(--main-white-color);
 	fill: var(--main-color);
 	margin: 0;
-	height: 100%;
+	transition: fill var(--general-transition-effect);
 }
 body.dark {
 	background-color: var(--main-color);
 	color: var(--main-white-color);
+	fill: var(--main-white-color);
 }
 
 ul,

@@ -39,8 +39,6 @@ async function getDrink() {
     const data = await fetchApi(type, identificator, inputValue);
     messageEr.classList.add('hidden');
     imageEr.classList.add('hidden');
-    cardsTitle.classList.remove('hidden');
-    cocktailsMenuList.classList.remove('hidden');
 
     try {
         if (type === 'random') {
@@ -48,6 +46,8 @@ async function getDrink() {
         }
 
         if (type === 'search') {
+            cardsTitle.classList.remove('hidden');
+            cocktailsMenuList.classList.remove('hidden');
             if (identificator === 's=' || identificator === 'f=') {
                 if (!data.drinks) {
                     throw new Error();
@@ -199,17 +199,21 @@ function fetchRandomCocktailCards(data) {
 }
 
 function fetchCocktailInfo(data) {
-    cocktailModal.style.display = 'block';
+    // cocktailModal.style.display = 'block';
     cocktailModal.style.opacity = '1';
+    cocktailModal.style.visibility = 'visible';
     let cocktailInfoObject = {};
     let ingredients = {};
+
     const element = data.drinks[0];
 
     for (let num = 1; num <= 15; num++) {
         if (element[`strIngredient${num}`] !== null) {
-            ingredients[element[`strIngredient${num}`]] = element[`strMeasure${num}`];
+            let words = element[`strIngredient${num}`].replace(/(^\w{1})|(\s+\w{1})/g, letter => letter.toUpperCase());
+            ingredients[words] = element[`strMeasure${num}`];
         }
     }
+    console.log(ingredients);
 
     cocktailInfoObject.id = element.idDrink;
     cocktailInfoObject.name = element.strDrink;
@@ -219,9 +223,9 @@ function fetchCocktailInfo(data) {
 
     cocktailModalInfo.innerHTML = modalCocktailInfo(cocktailInfoObject);
 
-    const ingrid = document.querySelectorAll('.ingredient-link');
-    ingrid.forEach(ingr => {
-        ingr.addEventListener('click', handleIngridient);
+    const ingredientsLinks = document.querySelectorAll('.ingredient-link');
+    ingredientsLinks.forEach(link => {
+        link.addEventListener('click', handleIngridient);
     });
 
     const closeCocktail = document.querySelector('.modal-cocktail__close');
@@ -238,7 +242,7 @@ function fetchCocktailInfo(data) {
             localStorage.removeItem(item);
             let localIndex = localKeys.indexOf(item);
             localKeys.splice(localIndex, 1);
-            closeCocktail.click();
+            // closeCocktail.click();
             if (favouriteCocktailsList) {
                 document.location.reload();
             }
@@ -279,8 +283,9 @@ function fetchCocktailInfo(data) {
     });
 
     closeCocktail.addEventListener('click', () => {
-        cocktailModal.style.display = 'none';
+        // cocktailModal.style.display = 'none';
         cocktailModal.style.opacity = '0';
+        cocktailModal.style.visibility = 'hidden';
         document.body.classList.remove('_lock');
     });
 }
@@ -288,10 +293,13 @@ function fetchCocktailInfo(data) {
 function fetchIngridientInfo(data) {
     ingredientModalInfo.innerHTML = '';
     const listOfIngr = document.getElementById(data.ingredients[0].strIngredient);
+    console.log(data.ingredients[0].strIngredient);
+    console.log(document.getElementById('Midori Melon Liqueur'));
 
     if (data.ingredients[0].strDescription !== null) {
-        ingredientModal.style.display = 'block';
+        // ingredientModal.style.display = 'block';
         ingredientModal.style.opacity = '1';
+        ingredientModal.style.visibility = 'visible';
         ingredientModalInfo.innerHTML = modalIngridientInfo(data.ingredients[0]);
 
         const closeIngredient = document.querySelector('.modal-ingredient__close');
@@ -321,8 +329,9 @@ function fetchIngridientInfo(data) {
         };
         const closeIngridient = ingredientModalInfo.querySelector('.modal-ingredient__close');
         closeIngridient.addEventListener('click', () => {
-            ingredientModal.style.display = 'none';
+            // ingredientModal.style.display = 'none';
             ingredientModal.style.opacity = '0';
+            ingredientModal.style.visibility = 'hidden';
         });
     }
     if (data.ingredients[0].strDescription === null) {
@@ -372,12 +381,14 @@ function mainFunc(event) {
 
 window.onclick = function ({ target }) {
     if (target == ingredientModal) {
-        ingredientModal.style.display = 'none';
+        // ingredientModal.style.display = 'none';
         ingredientModal.style.opacity = '0';
+        ingredientModal.style.visibility = 'hidden';
     }
     if (target == cocktailModal) {
-        cocktailModal.style.display = 'none';
+        // cocktailModal.style.display = 'none';
         cocktailModal.style.opacity = '0';
+        cocktailModal.style.visibility = 'hidden';
         document.body.classList.remove('_lock');
     }
 };
