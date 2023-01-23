@@ -308,7 +308,7 @@ function fetchIngridientInfo(data) {
             addIngrBtn.textContent = 'Remove from favourite';
         }
         addIngrBtn.onclick = function (event) {
-            ingrBtnId = event.target.id;
+            let ingrBtnId = event.target.id;
             if (localKeys.includes(ingrBtnId)) {
                 localStorage.removeItem(ingrBtnId);
                 let localIndex = localKeys.indexOf(ingrBtnId);
