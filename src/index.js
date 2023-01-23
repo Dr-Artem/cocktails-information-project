@@ -37,21 +37,28 @@ for (const key in localStorage) {
 
 async function getDrink() {
     const data = await fetchApi(type, identificator, inputValue);
-    messageEr.classList.add('hidden');
-    imageEr.classList.add('hidden');
 
     try {
         if (type === 'random') {
+            cardsTitle.classList.remove('hidden');
+            cocktailsMenuList.classList.remove('hidden');
+            messageEr.classList.add('hidden');
+            imageEr.classList.add('hidden');
             fetchRandomCocktailCards(data.drinks);
         }
 
         if (type === 'search') {
-            cardsTitle.classList.remove('hidden');
-            cocktailsMenuList.classList.remove('hidden');
             if (identificator === 's=' || identificator === 'f=') {
+                cardsTitle.classList.remove('hidden');
+                cocktailsMenuList.classList.remove('hidden');
+                messageEr.classList.add('hidden');
+                imageEr.classList.add('hidden');
                 if (!data.drinks) {
+                    cardsTitle.classList.add('hidden');
+                    cocktailsMenuList.classList.add('hidden');
                     throw new Error();
                 }
+
                 fetchCocktailCards(data.drinks);
             }
             if (identificator === 'i=') {
@@ -71,10 +78,9 @@ async function getDrink() {
             }
         });
     } catch (error) {
+        console.log(error);
         messageEr.classList.remove('hidden');
         imageEr.classList.remove('hidden');
-        cardsTitle.classList.add('hidden');
-        cocktailsMenuList.classList.add('hidden');
 
         Notiflix.Notify.failure('Нажаль такий коктейль відсутній');
     }
