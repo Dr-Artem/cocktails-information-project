@@ -520,7 +520,7 @@ export default class initMain {
         this.messageEr.classList.add('hidden');
 
         const localFavouriteCocktails = JSON.parse(localStorage.getItem('favouriteCocktails'));
-        const listOfFavouriteCocktails = localFavouriteCocktails.cocktails;
+        const listOfFavouriteCocktails = localFavouriteCocktails?.cocktails;
         this.renderCards(listOfFavouriteCocktails, cocktailCardsTemplate, this.cocktailsList);
 
         if (this.cocktailsList.innerHTML == '') {
@@ -537,7 +537,7 @@ export default class initMain {
         this.messageEr.classList.add('hidden');
 
         const localFavouriteIngredients = JSON.parse(localStorage.getItem('favouriteIngredients'));
-        const listOfFavouriteIngredients = localFavouriteIngredients.ingredients;
+        const listOfFavouriteIngredients = localFavouriteIngredients?.ingredients;
         this.renderCards(listOfFavouriteIngredients, ingredientCardsTemplate, this.ingredientsList);
 
         if (this.ingredientsList.innerHTML == '') {
