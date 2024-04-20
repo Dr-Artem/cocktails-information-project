@@ -153,7 +153,21 @@
     bottom: 0;
 }
 
-.fav-cocktail:has(.menu-list__item) ~ footer,
-.fav-ingredient:has(.menu-list__item) ~ footer {
+.fav-cocktail:has(.menu-list__item) ~ footer {
     position: relative;
+}
+@media screen and (max-width: $pre-tablet) {
+    .fav-ingredient:has(.menu-list__item:nth-child(2)) ~ footer {
+        position: relative;
+    }
+}
+@media screen and (min-width: $tablet) and (max-width: $pre-desktop) {
+    .fav-ingredient:has(.menu-list__item:nth-child(3)) ~ footer {
+        position: relative;
+    }
+}
+@media screen and (min-width: $desktop) {
+    .fav-ingredient:has(.menu-list__item:nth-child(4)) ~ footer {
+        position: relative;
+    }
 }

@@ -969,11 +969,25 @@ body.dark .header__navigation-sub-link:hover, body.dark .header__navigation-sub-
   bottom: 0;
 }
 
-.fav-cocktail:has(.menu-list__item) ~ footer,
-.fav-ingredient:has(.menu-list__item) ~ footer {
+.fav-cocktail:has(.menu-list__item) ~ footer {
   position: relative;
 }
 
+@media screen and (max-width: 767.98px) {
+  .fav-ingredient:has(.menu-list__item:nth-child(2)) ~ footer {
+    position: relative;
+  }
+}
+@media screen and (min-width: 768px) and (max-width: 1279.98px) {
+  .fav-ingredient:has(.menu-list__item:nth-child(3)) ~ footer {
+    position: relative;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .fav-ingredient:has(.menu-list__item:nth-child(4)) ~ footer {
+    position: relative;
+  }
+}
 .pagination {
   display: -webkit-box;
   display: -ms-flexbox;
