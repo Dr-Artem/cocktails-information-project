@@ -1,118 +1,130 @@
-/* The Modal (background) */
 .modal-ingredient {
-	display: block; /* Hidden by default */
-	opacity: 0;
-	visibility: hidden;
-	position: fixed; /* Stay in place */
-	z-index: 1; /* Sit on top */
-	left: 0;
-	top: 0;
-	width: 100%; /* Full width */
-	height: 100%; /* Full height */
-	background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 98%;
+    max-height: 98%;
+    background-color: var(--main-white-color);
+    border-radius: 3px;
+    overflow: auto;
 
-	transition: all var(--general-transition-effect);
-}
+    @media screen and (min-width: $tablet) {
+        width: 98%;
+        max-width: 790px;
+    }
 
-/* Modal Content/Box */
-.modal-ingredient__info {
-	position: absolute;
-	content: "";
-	top: 50%;
-	left: 50%;
-	max-width: 715px;
-	width: 100%;
-	transform: translate(-50%, -50%);
-	background-color: var(--main-white-color);
-	display: flex;
-	flex-direction: column;
-	padding: 0 28px 28px 28px;
-}
-.modal-ingredient__info.dark {
-	background-color: var(--main-color);
-}
+    &.dark {
+        background-color: var(--main-color);
+    }
+    &__backdrop {
+        position: fixed;
+        inset: 0;
+        z-index: 10;
+        background-color: rgba(0, 0, 0, 0.4);
+        transition: opacity var(--general-transition-effect), visibility var(--general-transition-effect);
 
-/* The Close Button */
-.modal-ingredient__close {
-	position: absolute;
-	content: "";
-	top: 12px;
-	right: 12px;
-	fill: inherit;
-	transition: fill var(--general-transition-effect);
-}
+        &[data-modal='closed'] {
+            opacity: 0;
+            visibility: hidden;
+        }
+        &[data-modal='opened'] {
+            opacity: 1;
+            visibility: visible;
+        }
+    }
+    &__close {
+        position: absolute;
+        top: 12px;
+        right: 12px;
+        fill: inherit;
+        transition: fill var(--general-transition-effect);
+    }
+    &__close:hover,
+    &__close:focus {
+        cursor: pointer;
+        fill: var(--accent-text-color);
+    }
+    &__title-wrapper {
+        padding: 28px;
+        border-bottom: 1px solid var(--accent-text-color);
 
-.modal-ingredient__close:hover,
-.modal-ingredient__close:focus {
-	cursor: pointer;
-	fill: var(--accent-text-color);
-}
+        @media screen and (min-width: $tablet) {
+            padding: 30px 28px;
+        }
+        @media screen and (min-width: $desktop) {
+            padding: 40px 28px;
+        }
+    }
+    &__name {
+        font-family: var(--roboto-alternate-family);
+        font-weight: var(--roboto-alternate-font-weight-900);
+        font-size: 32px;
+        line-height: 38px;
+        color: inherit;
+        margin-bottom: 28px;
+    }
+    &__type {
+        font-family: var(--poppins-family);
+        font-weight: 600;
+        font-size: 16px;
+        line-height: 24px;
+        text-transform: uppercase;
+        color: inherit;
+    }
+    &__info-wrapper {
+        padding: 28px;
+        display: flex;
+        flex-direction: column;
+        gap: 28px;
 
-.modal-ingredient__name {
-	font-family: "Roboto";
-	font-weight: 900;
-	font-size: 32px;
-	line-height: 38px;
-	color: inherit;
-	margin-bottom: 28px;
-}
+        @media screen and (min-width: $tablet) {
+            padding: 16px 28px;
+        }
+        @media screen and (min-width: $desktop) {
+            padding: 40px 28px;
+        }
+    }
+    &__description {
+        font-family: var(--poppins-family);
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 28px;
+        max-height: 200px;
+        overflow: auto;
+    }
+    &__list {
+        font-family: var(--poppins-family);
+        font-weight: 600;
+        font-size: 16px;
+        line-height: 24px;
+        color: var(--main-color);
+    }
+    &__add-favourite {
+        align-self: flex-end;
+        background-color: var(--accent-button-color);
+        border-radius: 4px;
+        padding: 12px 24px;
+        border: none;
+        font-family: var(--roboto-alternate-family);
+        font-weight: var(--roboto-alternate-font-weight-400);
+        font-size: 20px;
+        line-height: 24px;
+        color: var(--main-white-color);
+        cursor: pointer;
+        filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+        transition: color var(--general-transition-effect), background-color var(--general-transition-effect), border var(--general-transition-effect), filter var(--general-transition-effect);
 
-.modal-ingredient__type {
-	font-family: "Poppins";
-	font-weight: 600;
-	font-size: 16px;
-	line-height: 24px;
-	text-transform: uppercase;
-	color: inherit;
-}
-
-.modal-ingredient__title-wrapper {
-	// margin-bottom: 68px;
-	padding: 40px 0;
-	margin-bottom: 28px;
-	border-bottom: 1px solid var(--accent-text-color);
-}
-
-.modal-ingredient__info-wrapper {
-	margin-bottom: 28px;
-}
-
-.modal-ingredient__description {
-	font-family: "Poppins";
-	font-weight: 400;
-	font-size: 16px;
-	line-height: 28px;
-	color: var(--alternative-text-color);
-
-	max-height: 110px;
-	overflow: auto;
-	margin-bottom: 28px;
-}
-
-.modal-ingredient__list {
-	font-family: "Poppins";
-	font-weight: 600;
-	font-size: 16px;
-	line-height: 24px;
-	color: var(--main-color);
-}
-
-.modal-ingredient__button-wrapper {
-	display: flex;
-	justify-content: flex-end;
-	padding: 0 28px;
-}
-
-.modal-ingredient__add-favourite {
-	background-color: var(--accent-text-color);
-	border-radius: 4px;
-	padding: 12px 24px;
-	border: none;
-
-	font-family: "Roboto";
-	font-weight: 400;
-	font-size: 20px;
-	line-height: 24px;
-	color: var(--main-white-color);
-	cursor: pointer;
+        &:hover,
+        &:focus {
+            background-color: transparent;
+            color: var(--accent-text-color);
+            border: none;
+            filter: none;
+        }
+        &:active {
+            background-color: var(--accent-text-color);
+            color: var(--main-white-color);
+        }
+    }
 }

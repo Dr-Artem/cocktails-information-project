@@ -1,0 +1,43 @@
+body.dark,
+body.dark .modal-ingredient,
+body.dark .modal-cocktail,
+body.dark .header__navigation-wrapper {
+    background-color: var(--main-color);
+    color: var(--main-white-color);
+    fill: var(--main-white-color);
+}
+
+body.dark .modal-cocktail {
+    &__description-text {
+        color: #bdbdbd;
+    }
+    &__ingredient-link {
+        color: #bdbdbd;
+    }
+}
+
+body.dark .modal-ingredient {
+    &__description {
+        color: #bdbdbd;
+    }
+}
+
+body.dark .pagination {
+    &__btn.active {
+        color: var(--main-color);
+    }
+    &__btn:hover,
+    &__btn:focus {
+        color: var(--main-color);
+    }
+}
+
+body.dark .header__navigation-sub-link {
+    background-color: var(--main-color);
+
+    &:hover,
+    &:focus {
+        background-color: var(--accent-button-color);
+        color: var(--main-color);
+    }
+}

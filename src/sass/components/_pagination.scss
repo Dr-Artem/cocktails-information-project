@@ -1,0 +1,43 @@
+.pagination {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
+
+    &__btn {
+        position: relative;
+        width: 32px;
+        aspect-ratio: 1;
+        cursor: pointer;
+        border-radius: 50%;
+        background-color: transparent;
+        border: 2px solid var(--accent-button-color);
+        transition: color var(--general-transition-effect);
+
+        @media screen and (min-width: $tablet) {
+            width: 40px;
+        }
+    }
+    &__btn::before {
+        content: '';
+        z-index: -1;
+        position: absolute;
+        border-radius: 50%;
+        inset: 50%;
+        background-color: var(--accent-button-color);
+        transition: inset var(--general-transition-effect);
+    }
+    &__btn.active {
+        background-color: var(--accent-button-color);
+        color: var(--main-white-color);
+        pointer-events: none;
+    }
+    &__btn:hover,
+    &__btn:focus {
+        color: var(--main-white-color);
+    }
+    &__btn:hover.pagination__btn::before,
+    &__btn:focus.pagination__btn::before {
+        inset: 0;
+    }
+}

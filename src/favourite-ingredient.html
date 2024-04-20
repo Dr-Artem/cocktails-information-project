@@ -7,7 +7,7 @@
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
         <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Roboto:wght@400;700;900&display=swap" rel="stylesheet" />
         <link rel="stylesheet" href="./sass/index.scss" />
-        <title>Cocktails</title>
+        <title>Favourite Ingredients</title>
         <link type="image/x-icon" href="./images/icon/icon-drinks.png" rel="shortcut icon" />
     </head>
     <body>
@@ -15,7 +15,7 @@
 
         <section class="fav-ingredient">
             <div class="container">
-                <h2 class="fav-ingredient__title">Favourite ingredients</h2>
+                <h2 class="fav-ingredient__title cards__title">Favourite ingredients</h2>
                 <h2 class="fav-ingredient__title title-error hidden">You haven't added any favourite ingridients yet</h2>
                 <picture class="error-wrapper">
                     <source srcset="./images/main/error-photo-480.webp 1x, ./images/main/error-photo-480@2x.webp 2x" type="image/webp" media="(max-width: 767px)" />
@@ -23,12 +23,14 @@
                     <source srcset="./images/main/error-photo-768.webp 1x, ./images/main/error-photo-768@2x.webp 2x" type="image/webp" media="(min-width: 768px)" />
                     <img class="error-wrapper__img hidden" src="./images/main/error-photo-1280.png" alt="two people at the table, smiling and waiting for their order, which the waiter brought" />
                 </picture>
-                <ul class="fav-ingredient__list"></ul>
+                <ul class="fav-ingredient__list menu-list" id="ingredients-list"></ul>
+                <ul class="cards__pagination pagination"></ul>
             </div>
         </section>
         <include src="./partials/modals.html"></include>
         <include src="./partials/footer.html"></include>
 
         <script type="module" src="./index.js"></script>
+        <script type="module" src="./js/themeSwitcher.js"></script>
     </body>
 </html>

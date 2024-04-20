@@ -1,14 +1,14 @@
 {{#each this}}
-    <li class='menu-list__item' id='strDrink{{this.idDrink}}'>
+    <li class='menu-list__item' id='{{this.idDrink}}'>
         <div class='menu-list__image-wrapper'>
             <img class='menu-list__image' loading='lazy' src='{{this.strDrinkThumb}}' />
         </div>
 
-        <div class='menu-list-content-wrapper'>
+        <div class='menu-list__content-wrapper'>
             <h3 class='menu-list__name'>{{this.strDrink}}</h3>
             <div class='menu-list__buttons-wrapper'>
                 <button class='menu-list__lookup' id='{{this.idDrink}}'>Learn More</button>
-                <button class='menu-list__add' id='strDrink{{this.idDrink}}'>Add To
+                <button class='menu-list__add' id='{{this.idDrink}}'>Add To
                     <svg class='menu-list__add-icon' viewBox='0 0 36 32'><path
                             fill='#fd5103'
                             style='fill: var(--color1, #fd5103)'

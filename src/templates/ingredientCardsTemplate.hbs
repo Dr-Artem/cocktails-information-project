@@ -1,12 +1,12 @@
-{{#with this}}
-    <li class='fav-ingredient__item'>
-        <div class='fav-ingredient__content-wrapper'>
-            <h3 class='fav-ingredient__name'>{{this.strIngredient}}</h3>
-            <p class='fav-ingredient__type'>{{this.strType}}</p>
-            <div class='fav-ingredient__button-wrapper'>
-                <button class='fav-ingredient__learn' id='{{this.strIngredient}}'>Learn more</button>
-                <button class='fav-ingredient__remove' id='strIngredient{{this.idIngredient}}'>Remove
-                    <svg class='fav-ingredient__remove-icon' viewBox='0 0 36 32'>
+{{#each this}}
+    <li class='menu-list__item'>
+        <div class='menu-list__content-wrapper'>
+            <h3 class='menu-list__name menu-list__name--ingredient'>{{this.strIngredient}}</h3>
+            <p class='menu-list__type'>{{this.strType}}</p>
+            <div class='menu-list__buttons-wrapper'>
+                <button class='menu-list__lookup' id='{{this.idIngredient}}'>Learn more</button>
+                <button class='menu-list__add' id='{{this.idIngredient}}'>Remove
+                    <svg class='menu-list__add-icon' viewBox='0 0 36 32'>
                         <path
                             fill='#fd5103'
                             style='fill: var(--color1, #fd5103)'
@@ -22,4 +22,4 @@
             </div>
         </div>
     </li>
-{{/with}}
+{{/each}}
