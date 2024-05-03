@@ -7,7 +7,7 @@ Welcome to the Cocktails Information Project! This project is dedicated to provi
 ### 1. Recipe Database
 
 -   Browse through a vast collection of cocktail recipes.
--   Search for recipes by name, ingredients, or categories.
+-   Search for recipes by name.
 
 ### 2. Ingredient Database
 
