@@ -1,21 +1,21 @@
 {
-    "name": "cocktails-own-project",
+    "name": "cocktails-information-project",
     "version": "2.0.0",
     "description": "",
-    "homepage": "https://Dr-Artem.github.io/cocktails-own-project",
+    "homepage": "https://Dr-Artem.github.io/cocktails-information-project",
     "scripts": {
         "start": "parcel src/*.html",
-        "build": "parcel build src/*.html --public-url /cocktails-own-project/"
+        "build": "parcel build src/*.html --public-url /cocktails-information-project/"
     },
     "repository": {
         "type": "git",
-        "url": "git+https://github.com/Dr-Artem/cocktails-own-project.git"
+        "url": "git+https://github.com/Dr-Artem/cocktails-information-project.git"
     },
     "keywords": [],
     "author": "Alexander Repeta <alexander.repeta@gmail.com>",
     "license": "ISC",
     "bugs": {
-        "url": "https://github.com/Dr-Artem/cocktails-own-project/issues"
+        "url": "https://github.com/Dr-Artem/cocktails-information-project/issues"
     },
     "dependencies": {
         "axios": "^1.2.2",
